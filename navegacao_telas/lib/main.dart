@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:navegacao_telas/screens/categories_screen.dart';
 import 'package:navegacao_telas/screens/category_meals_screen.dart';
-import 'package:navegacao_telas/screens/meal_screen_detail.dart';
+import 'package:navegacao_telas/screens/meal_detail_screen.dart';
+import 'package:navegacao_telas/screens/settings_screen.dart';
 import 'package:navegacao_telas/screens/tab_screen.dart';
 import 'package:navegacao_telas/utils/app_routs.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         AppRouts.HOME: (ctx) => const TabScreen(),
         AppRouts.CATEGORY_MEALS: (ctx) => const CategoryMealsScreen(),
         AppRouts.MEAL_DETAIL: (ctx) => const MealDetailScreen(),
+        AppRouts.SETTINGS: (ctx) => const SettingsScreen(),
       },
     );
   }

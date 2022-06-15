@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:navegacao_telas/utils/app_routs.dart';
-
 import '../models/meal.dart';
 
 class MealIten extends StatelessWidget {
@@ -9,7 +8,21 @@ class MealIten extends StatelessWidget {
   final Meal meal;
 
   void _selectedMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(AppRouts.MEAL_DETAIL, arguments: meal);
+    //o pushNamed() é uma função que recebe um Future, por isso podemos utilizar um then().
+    Navigator.of(context)
+        .pushNamed(
+      AppRouts.MEAL_DETAIL,
+      arguments: meal,
+    )
+        .then(
+      (result) {
+        if (result == null) {
+          debugPrint('sem nada');
+        } else {
+          debugPrint('refeicão: $result');
+        }
+      },
+    );
   }
 
   @override
