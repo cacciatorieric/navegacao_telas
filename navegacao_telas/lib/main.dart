@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:navegacao_telas/screens/categories_screen.dart';
+import 'package:navegacao_telas/data/dummy.dart';
+import 'package:navegacao_telas/models/meal.dart';
 import 'package:navegacao_telas/screens/category_meals_screen.dart';
 import 'package:navegacao_telas/screens/meal_detail_screen.dart';
 import 'package:navegacao_telas/screens/settings_screen.dart';
@@ -8,7 +9,15 @@ import 'package:navegacao_telas/utils/app_routs.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  List<Meal> _avaliableMeals = DUMMY_MEALS;
+  List<Meal> _favoriteMeals = [];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
